@@ -17,7 +17,8 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-            background-color: #fafafa;
+            /* Updated background color for a professional look */
+            background-color: #eef2f5; 
         }
         header {
             border-bottom: 2px solid #2c3e50;
@@ -34,6 +35,33 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             margin: 1.5rem 0;
             border-left: 4px solid #3498db;
+        }
+
+        /* Styling for the new Current Week Event Box */
+        .event-box {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            margin: 1rem 0 2rem 0;
+            border-top: 5px solid #2c3e50;
+        }
+        .event-title {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+        .event-details {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            border-left: 3px solid #3498db;
+        }
+        .abstract {
+            color: #444;
+            font-size: 0.95em;
+            text-align: justify;
         }
 
         .paper-table {
@@ -90,6 +118,16 @@
             color: #666;
             margin: 0;
         }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd;
+            color: #777;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
@@ -107,6 +145,27 @@
         <p><strong>Preferred Day:</strong> Thursday or Friday (Every week)</p>
         <p><strong>Time:</strong> 9:30 - 11:00 AM EST</p>
     </header>
+
+    <section>
+        <h2>Current Week</h2>
+        
+        <div class="event-box">
+            <h3 class="event-title">Tuesday, June 09, 2026: OCIS+INI Joint Webinar</h3>
+            
+            <div class="event-details">
+                <p style="margin: 0;"><strong>Speaker:</strong> Yixin Wang (University of Michigan)</p>
+                <p style="margin: 5px 0 0 0;"><strong>Title:</strong> Causal inference with unstructured data</p>
+                <p style="margin: 5px 0 0 0;"><strong>Zoom Details:</strong> <a href="#">Link to join</a> | <strong>Meeting ID:</strong> 819 2387 7168 | <strong>Passcode:</strong> Newton1</p>
+            </div>
+
+            <h4>Abstract:</h4>
+            <div class="abstract">
+                <p>Causal inference traditionally relies on tabular data, where treatments, outcomes, and covariates are manually collected and labeled. However, many real-world problems involve unstructured data (e.g., images, text, and videos) where treatments or outcomes are high-dimensional and unstructured, or all causal variables are hidden within the unstructured observations. This talk explores causal inference in such settings.</p>
+                <p>We begin with cases where all causal variables (including treatments, outcomes, covariates) are hidden in unstructured observations. These causal problems require a crucial first step, extracting high-level latent factors from raw unstructured inputs. We develop algorithms to identify these factors. While traditional methods often assume statistical independence, latent factors are often correlated or causally connected. Our key observation is that, despite correlations, the causal connections (or the lack of) among factors leave geometric signatures in the latent factors' support, the ranges of values each can take. These signatures allow us to provably identify latent factors (up to different transformations) and enable downstream causal analysis from observational, interventional, or multi-domain datasets.</p>
+                <p>Next, we tackle cases where unstructured data itself serves as either the treatment or the outcome. In these cases, standard causal queries like average treatment effect (ATE) are not suitable: subtracting one text, image, or video outcome from another is meaningless. High-dimensional unstructured treatments also challenge the overlap assumption required for causal identification. To address these challenges, we propose new causal queries: for unstructured outcomes, we pinpoint outcome features most affected by the treatment; for unstructured treatments, we identify influential treatment features driving outcome differences. Finally, we extend these ideas to decision-making algorithms, such as optimizing natural language actions for desired outcomes.</p>
+            </div>
+        </div>
+    </section>
 
     <section>
         <h2>Textbook</h2>
@@ -241,6 +300,10 @@
 
         </div>
     </section>
+
+    <footer>
+        <p>Website managed by Saikat and Shubhayan.</p>
+    </footer>
 
 </body>
 </html>
